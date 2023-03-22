@@ -21,48 +21,18 @@
               <label>PESO: </label>
               <input type="number" id='peso'>
           </div>
-          <button id='calcular'>Calcular</button>
-  
-          <div class="result" id='resultado'></div>
+          <button id='calcular' onclick="calcular()" >Calcular</button>
+          <p class="resultado"></p>
+          <p class="classificacao"></p>
+          
         </div>
+        
+       
       </main>
       
-<!--<script>
-    function calcular(){
-        //declarando variaveis
-        var peso, altura, resp, estado;
-
-        //pegando valor de peso e altura
-        peso = parseFloat(document.getElementById("peso").value);
-        altura = parseFloat(document.getElementById("altura").value);
-
-        //calcular IMC
-        resp = peso / (altura * altura);
-        //passar o valor para o id resp
-        document.getElementById("resultado").textContent = "Seu IMC é " + resp.toFixed(2);
-
-        //mostrar o estado de acordo com IMC
-        if(resp < 18.5){
-            estado = "Magreza";   
-        }
-        else if(resp >= 18.5 && resp < 25){
-            estado = "Normal";
-        }
-        else if(resp >= 25 && resp < 30){
-            estado = "Sobrepeso I";
-        }
-        else if(resp >= 30 && resp < 40){
-            estado = "Obesidade II";
-        }
-        else{
-            estado = "Obesidade Grave III";
-        }
-        document.getElementById("estado").textContent = estado; 
-    }
-</script>
       <script src="js/script.js"></script>
 
 
--->
+
 </body>
 </html>

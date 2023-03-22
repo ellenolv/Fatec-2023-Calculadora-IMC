@@ -1,37 +1,51 @@
-/*const calcular = document.getElementById('calcular');
+function calcular(){
+  
+var peso = document.getElementById('peso').value;
+var altura = document.getElementById('altura').value;
+const resultado = document.getElementById('resultado');
 
-function imc () {
-    const nome = document.getElementById('nome').value;
-    const altura = +document.getElementById('altura').value;
-    const peso = +document.getElementById('peso').value;
-    const resultado = document.getElementById('resultado');
+    if ( peso !== "" && altura !==""){
 
-    if (nome !== '' && altura !== '' && peso !== '') {
+        peso = parseFloat(peso);
+        altura = parseFloat(altura);
+       
 
-        const valorIMC = (peso / (altura * altura)).toFixed(1);
+        var imc = peso / (altura * altura);
+        imc = imc.toFixed(2);
+        console.log(imc);
+        let msg = "";
 
-        let classificacao = '';
-
-        if (valorIMC < 18.5){
-            classificacao = 'abaixo do peso.';
-        }else if (valorIMC < 25) {
-            classificacao = 'com peso ideal. Parabéns!!!';
-        }else if (valorIMC < 30){
-            classificacao = 'levemente acima do peso.';
-        }else if (valorIMC < 35){
-            classificacao = 'com obesidade grau I.';
-        }else if (valorIMC < 40){
-            classificacao = 'com obesidade grau II';
-        }else {
-            classificacao = 'com obesidade grau III. Cuidado!!';
+        if ( imc < 18.5){
+            msg = "Magreza";
+        }
+        else if ( imc > 18.5 && imc < 24.9){
+            msg = "Normal";
+        }
+        else if ( imc > 25 && imc < 29.9){
+            msg = "Sobrepeso";
+        }
+        else if ( imc > 30 && imc < 34.9){
+            msg = "Obesidade grau I";
+        }
+        else if ( imc > 35 && imc < 39.9){
+            msg = "Obesidade grau II";
+        }
+        else if ( imc > 40){
+            msg = "Obesidade grau III";
         }
 
-        resultado.textContent = `O IMC é ${valorIMC} e você está ${classificacao}`;
-        
-    }else {
-        resultado.textContent = 'Preencha todos os campos!!!';
+        document.querySelector(".resultado").innerHTML = imc;
+        document.querySelector(".classificacao").innerHTML = msg;
     }
 
+     function limpar(){
+        peso = parseFloat(document.getElementById("peso").value);
+        altura = parseFloat(document.getElementById("altura").value);
+        resultado = parseFloat(document.getElementById("resultado").value);
+    
+    
+        document.getElementById("peso").value = " ";
+        document.getElementById("altura").value = " ";
+        document.getElementById("resultado").value = " ";
+    }
 }
-
-calcular.addEventListener('click', imc);*/
